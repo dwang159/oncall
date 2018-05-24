@@ -321,6 +321,9 @@ var oncall = {
       this.getData();
     },
     events: function(){
+      this.data.$page.on('change','#test-checkbox', function(){
+        console.log('checkbox changed')
+      });
       router.updatePageLinks();
     },
     getData: function(){
@@ -346,6 +349,7 @@ var oncall = {
 
       this.data.$page.html(template(dataArr));
       this.events();
+      console.log($('#test-checkbox').is(':checked'))
     }
   },
   dashboard: {
